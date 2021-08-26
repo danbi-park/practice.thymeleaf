@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>exTemplate</title>
+</head>
+<body>
+<th:block th:replace = "~{/layout/layout1 :: setContent(~{this::content})}">
+<!--  layout1에 있는 th:fragment="setContent(content 안에 있는 th:block)"을 exTemplate로 가져와서 ~{this::content}
+즉 this여기에 있는 content에 있는 h1태그를 Layout1(content) 매개변수로 보낸다. 그 매개변수가 ${}로 간다. 으로 돌려보낸다.  -->
+    <th:block th:fragment="content"> <!-- 위에 content가 붙기 위해서 fragment를 쓴 것 -->
+        <h1>exTemplate Page</h1>
+    </th:block>
+</th:block>
+</body>
+</html>

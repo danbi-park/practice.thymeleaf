@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<!--content 안에서 작업하기 위해서 th:block으로 감싸줌-->
+<th:block th:fragment="setContent(content)">
+    <head>
+        <meta charset="UTF-8">
+        <title>layout1</title>
+        <style>
+        * { padding:0; margin:0;}
+        .header { width:100vw; height: 20vh; background: pink;}
+        .content { width:100vw; height: 70vh; background: lightGray;}
+        .footer { width:100vw; height: 10vh; background: brown;}
+        </style>
+    </head>
+    <body>
+    <div class="header"><th:block th:replace="~{/include/header::header}" /></div>
+    <div class="content"><th:block th:replace="${content}"></th:block></div>
+    <div class="footer"><th:block th:replace="~{/include/footer::footer}" /></div>
+    </body>
+</th:block>
+</html>
